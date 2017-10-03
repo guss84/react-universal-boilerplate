@@ -1,0 +1,51 @@
+html {
+  height: 100%;
+  color: #404040;
+  font: 400 1em/1.4 "Open Sans", sans-serif;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  font-family: "Arvo", Arial, Helvetica, Sans-serif;
+  margin: 0;
+}
+
+#root {
+  min-height: 100vh;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: white;
+}
+
+h2 {
+  font-size: 2em;
+  line-height: 1.5em;
+}
+
+p,
+li,
+ul,
+ol {
+  font-family: "Raleway";
+  color: white;
+  font-size: 20px;
+  line-height: 1.25em;
+}
+
+.app {
+  width: 100%;
+  height: 100%;
+
+  /*padding-top: 100px;*/
+}
+.header {
+  -webkit-box-flex: 0;
+  -webkit-flex: none;
+  -ms-flex: none;
+  flex: none;
+}
