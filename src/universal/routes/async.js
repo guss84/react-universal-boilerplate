@@ -16,7 +16,6 @@ function asyncRoute(getComponent) {
 
     render() {
       const { Component } = this.state;
-
       if (Component) {
         return <Component {...this.props} />;
       }
@@ -29,9 +28,6 @@ export const Home = asyncRoute(() => {
   return System.import("../components/Home/Home.js");
 });
 
-/*export const Counter = asyncRoute(() => {
-  return System.import("../modules/counter/containers/Counter/CounterContainer.js");
-});*/
 export const Trips = asyncRoute(() => {
-  return System.import("../modules/trips/containers/TripsContainer.js");
+  return System.import("../pages/trips/containers/TripsContainer.js");
 });

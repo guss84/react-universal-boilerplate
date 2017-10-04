@@ -8,15 +8,17 @@ import Trips from "../components/Trips";
 // Actions
 import { getTrips } from "../ducks/trips-action";
 
+@connect(mapStateToProps, mapDispatchToProps)
 class TripsContainer extends Component {
   static fetchData({ store }) {
     return store.dispatch(getTrips());
   }
   componentDidMount() {
-    if (this.props.allTrips.length === 0) this.props.getTrips();
+    if (this.props.allTrips === null) this.props.getTrips();
   }
   render() {
-    return <Trips trips={this.props.allTrips} />;
+    const { allTrips } = this.props;
+    return <Trips trips={allTrips} />;
   }
 }
 function mapStateToProps(state) {
@@ -32,5 +34,4 @@ function mapDispatchToProps(dispatch, props) {
     }
   };
 }
-export { TripsContainer };
-export default connect(mapStateToProps, mapDispatchToProps)(TripsContainer);
+export default TripsContainer;

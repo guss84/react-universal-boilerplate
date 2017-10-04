@@ -12,7 +12,7 @@ if (typeof window != "undefined" && window.__INITIAL_STATE__) {
   preloadedState = window.__INITIAL_STATE__;
   delete window.__INITIAL_STATE__;
 }
-const store = createStore(reducers, preloadedState, applyMiddleware(thunk));
+const store = createStore(reducers, preloadedState, applyMiddleware(thunk), applyMiddleware(routerMiddleware));
 
 if (module.hot) {
   // Enable Webpack hot module replacement for reducers

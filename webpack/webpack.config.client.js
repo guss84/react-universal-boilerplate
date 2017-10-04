@@ -76,11 +76,7 @@ export default {
       {
         test: /\.js$/,
         loader: "babel-loader",
-        include: clientInclude,
-        options: {
-          presets: ["es2015", "stage-0"],
-          plugins: ["transform-runtime"]
-        }
+        include: clientInclude
       },
 
       // CSS

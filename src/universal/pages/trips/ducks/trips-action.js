@@ -28,7 +28,6 @@ export function fetchTripsSuccess(items) {
   };
 }
 export function getTrips() {
-  console.log("getTrips dispatched");
   return function(dispatch) {
     return getRidesFromAPI().then(res => {
       dispatch(fetchTripsSuccess(res.data));
@@ -40,7 +39,5 @@ export function getTrips() {
     };*/
 }
 function getRidesFromAPI() {
-  console.log("getRidesFromAPI dispatched");
-
   return Request.get(`${ROOT_URL}/allTrips`);
 }

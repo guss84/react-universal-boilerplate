@@ -11,8 +11,8 @@ const universalSrc = path.join(src, "universal");
 const clientInclude = [clientSrc, universalSrc];
 
 const babelQuery = {
-  presets: ["react", ["env", { modules: false }], "stage-0"],
-  plugins: ["transform-decorators-legacy", "react-hot-loader/babel", "async-to-promises"]
+  presets: ["react", ["es2015", { modules: false }], "stage-0"],
+  plugins: ["transform-decorators-legacy", "react-hot-loader/babel"]
 };
 
 export default {
@@ -62,10 +62,7 @@ export default {
       {
         test: /\.js$/,
         loader: "babel-loader",
-        options: {
-          presets: ["env"],
-          plugins: ["transform-runtime"]
-        },
+        query: babelQuery,
         include: clientInclude
       },
 

@@ -5,7 +5,7 @@ import styles from "./Home.css";
 
 class Home extends Component {
   render() {
-    return <div />;
+    return <strong>home</strong>;
   }
 }
 
