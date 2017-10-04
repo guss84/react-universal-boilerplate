@@ -2,6 +2,7 @@
 import React, { Component } from "react";
 import { StaticRouter } from "react-router";
 import { renderToString } from "react-dom/server";
+import helmet from "react-helmet";
 
 // Redux
 import { Provider } from "react-redux";
@@ -35,12 +36,15 @@ class Html extends Component {
           </StaticRouter>
         </Provider>
       );
-
+    const helmetData = helmet.renderStatic();
     return (
       <html>
         <head>
           <meta charSet="utf-8" />
-          <title>{title}</title>
+          {helmetData.title.toComponent()}
+          {helmetData.meta.toComponent()}
+          {helmetData.link.toComponent()}
+
           <script dangerouslySetInnerHTML={{ __html: initialState }} />
           {PROD && <link rel="stylesheet" href="/static/prerender.css" type="text/css" />}
         </head>

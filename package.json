@@ -60,6 +60,7 @@
     "mongoose": "^4.11.13",
     "react": "^16.0.0",
     "react-dom": "^16.0.0",
+    "react-helmet": "^5.2.0",
     "react-redux": "^5.0.3",
     "react-router": "^4.2.0",
     "react-router-dom": "^4.0.0",

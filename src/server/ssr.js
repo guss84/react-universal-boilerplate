@@ -10,7 +10,6 @@ import { renderToString } from "react-dom/server";
 import { Promise } from "bluebird";
 // Redux
 // import {push} from 'react-router-redux';
-
 import { createStore, applyMiddleware } from "redux";
 import thunk from "redux-thunk";
 import reducers from "universal/redux/reducers";
@@ -21,6 +20,7 @@ import Html from "./Html.js";
 
 function renderApp(url, res, store, assets) {
   const context = {};
+
   const html = renderToString(
     <Html title="ssr boilerplate" store={store} url={url} context={context} assets={assets} />
   );

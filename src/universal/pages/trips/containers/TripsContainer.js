@@ -1,6 +1,7 @@
 // Libraries
 import React, { Component } from "react";
 import { connect } from "react-redux";
+import { Helmet } from "react-helmet";
 
 // Components
 import Trips from "../components/Trips";
@@ -14,11 +15,19 @@ class TripsContainer extends Component {
     return store.dispatch(getTrips());
   }
   componentDidMount() {
-    if (this.props.allTrips === null) this.props.getTrips();
+    if (this.props.allTrips.length === 0) this.props.getTrips();
   }
   render() {
     const { allTrips } = this.props;
-    return <Trips trips={allTrips} />;
+    return (
+      <div>
+        <Helmet>
+          <meta charSet="utf-8" />
+          <title>All trip data from New York airport</title>
+        </Helmet>
+        <Trips trips={allTrips} />
+      </div>
+    );
   }
 }
 function mapStateToProps(state) {
