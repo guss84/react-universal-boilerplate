@@ -12,12 +12,8 @@ reloading for both React components and redux reducers.
 
 For **Production** run `yarn build && yarn production`.
 
-Currently not working, need to fix routes for react-router@4
-
 ## Notes
 
 Set initial state with static fetchData function
 DB is set to demo user, read-only access
-##  Todo
 
-Fix router for production
